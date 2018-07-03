@@ -7,26 +7,26 @@ var board = {
       row: 0,
       col: 0,
       isMine: 0,
-      hidden: true
-//      isMarked: false
-//      surroundingMines:  //what should I be adding here?
+      hidden: true,
+      isMarked: false,
+      surroundingMines: 2  //what should I be adding here?
     },
-    {row: 0, col: 1, isMine: 1, hidden: true},
-    {row: 0, col: 2, isMine: 1, hidden: true},
-    {row: 1, col: 0, isMine: 0, hidden: true}, 
-    {row: 1, col: 1, isMine: 1, hidden: true},
-    {row: 1, col: 2, isMine: 0, hidden: true},
-    {row: 2, col: 0, isMine: 0, hidden: true},
-    {row: 2, col: 1, isMine: 0, hidden: true},
-    {row: 2, col: 2, isMine: 1, hidden: true},
+    {row: 0, col: 1, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 0, col: 2, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 1, col: 0, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines}, 
+    {row: 1, col: 1, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 1, col: 2, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 0, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 1, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 2, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
   ]
 }
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
   for (i = 0; i < board.cells.legnth; i++) { 
-      countSurroundingMines (board.cells[i]);
-      var surroundingMines = countSurroundingMines ();
+    countSurroundingMines (board.cells[i]);
+    var surroundingMines = countSurroundingMines ();
   }
   lib.initBoard()
 }
@@ -53,8 +53,8 @@ function checkForWin () {
 function countSurroundingMines (cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col)
   var count = 0
-  for (i = 0; i < surroundingCells.legnth < i++)
-  if (surroundingCells[i].isMine === true) {
+  for (i = 0; i < surrounding.legnth; i++)
+  if (surrounding[i].isMine) {
     count++
   }
   return count
