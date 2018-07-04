@@ -9,16 +9,15 @@ var board = {
       isMine: Boolean(Math.floor(Math.random()*1.5)),
       hidden: true,
       isMarked: false,
-      surroundingMines: 2  //what should I be adding here?
     },
-    {row: 0, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 0, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 1, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines}, 
-    {row: 1, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 1, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 0, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 0, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 1, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false}, 
+    {row: 1, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 1, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 2, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 2, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
+    {row: 2, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false},
   ]
 }
 
