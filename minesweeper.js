@@ -6,19 +6,19 @@ var board = {
     {
       row: 0,
       col: 0,
-      isMine: 0,
+      isMine: Boolean(Math.floor(Math.random()*1.5)),
       hidden: true,
       isMarked: false,
       surroundingMines: 2  //what should I be adding here?
     },
-    {row: 0, col: 1, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 0, col: 2, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 1, col: 0, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines}, 
-    {row: 1, col: 1, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 1, col: 2, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 0, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 1, isMine: 0, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
-    {row: 2, col: 2, isMine: 1, hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 0, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 0, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 1, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines}, 
+    {row: 1, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 1, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 0, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 1, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
+    {row: 2, col: 2, isMine: Boolean(Math.floor(Math.random()*1.5)), hidden: true, isMarked: false, surroundingMines: countSurroundingMines},
   ]
 }
 
@@ -51,12 +51,12 @@ function checkForWin () {
 // It will return cell objects in an array. You should loop through 
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
-  var surrounding = lib.getSurroundingCells(cell.row, cell.col)
-  var count = 0
-  for (i = 0; i < surrounding.legnth; i++)
-  if (surrounding[i].isMine) {
-    count++
+  var surroundingCells = lib.getSurroundingCells(cell.row, cell.col);
+  var count = 0;
+  for (var i = 0; i < surroundingCells.length; i++) {
+    if (surroundingCells[i].isMine) {
+      count++;
+    }
   }
   return count
 }
-
